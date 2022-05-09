@@ -113,7 +113,7 @@ html {
 
 #nav li a {
   text-decoration: none;
-  display: inline-block;
+  display: block;
 }
 
 #nav li:hover > a {
@@ -140,6 +140,14 @@ html {
   padding: 0 12px;
 }
 
+#header .mobile-menu-bnt {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#header .mobile-menu-bnt,
 #header .search-bnt {
   float: right;
 }
@@ -149,6 +157,16 @@ html {
   background-color: #f44336;
 }
 
+#header .mobile-menu-bnt:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#header .mobile-menu-bnt:hover .menu-icon {
+  color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon {
   color: #fff;
   line-height: 46px;
@@ -224,7 +242,8 @@ html {
 }
 
 #content .members-list {
-  margin-top: 32px;
+  margin-top: 16px;
+  padding-top: 32px;
 }
 
 #content .member-name {
@@ -273,7 +292,7 @@ html {
 
 /* Place */
 #content .places-list {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 #content .place-img {

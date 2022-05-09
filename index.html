@@ -7,6 +7,7 @@
   <title>The Band</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
   <div id="main">
@@ -36,6 +37,10 @@
         <i class="search-icon fa-solid fa-magnifying-glass"></i>
       </div>
       <!-- End: Search button -->
+      <!-- Mobile menu button -->
+      <div class="mobile-menu-bnt">
+        <i class="menu-icon fa-solid fa-bars"></i>
+      </div>
     </div>
 
     <div id="slider">
@@ -53,15 +58,15 @@
         <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
         <div class="members-list row">
-          <div class="col col-three text-center">
+          <div class="col col-three s-col-full mt16 text-center">
             <div class="member-name">Name</div>
             <img src="./assets/img/band/member1.jpg" alt="Member" class="member-img">
           </div>
-          <div class="col col-three text-center">
+          <div class="col col-three s-col-full mt16 text-center">
             <div class="member-name">Name</div>
             <img src="./assets/img/band/member1.jpg" alt="Member" class="member-img">
           </div>
-          <div class="col col-three text-center">
+          <div class="col col-three s-col-full mt16 text-center">
             <div class="member-name">Name</div>
             <img src="./assets/img/band/member1.jpg" alt="Member" class="member-img">
           </div>
@@ -83,31 +88,31 @@
 
           <!-- Place -->
           <div class="places-list row">
-            <div class="place-item col col-three">
+            <div class="place-item col col-three s-col-full mt16">
               <img src="./assets/img/place/place1.jpg" alt="place image" class="place-img">
               <div class="place-body">
                 <h3 class="place-heading">New York</h3>
                 <p class="place-time">Fri 27 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="bnt js-buy-bnt">Buy Tickets</button>
+                <button class="bnt js-buy-bnt s-full-width">Buy Tickets</button>
               </div>
             </div>
-            <div class="place-item col col-three">
+            <div class="place-item col col-three s-col-full mt16">
               <img src="./assets/img/place/place2.jpg" alt="place image" class="place-img">
               <div class="place-body">
                 <h3 class="place-heading">Paris</h3>
                 <p class="place-time">Sat 28 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="bnt js-buy-bnt">Buy Tickets</button>
+                <button class="bnt js-buy-bnt s-full-width">Buy Tickets</button>
               </div>
             </div>
-            <div class="place-item col col-three">
+            <div class="place-item col col-three s-col-full mt16">
               <img src="./assets/img/place/place3.jpg" alt="place image" class="place-img">
               <div class="place-body">
                 <h3 class="place-heading">San Francisco</h3>
                 <p class="place-time">Sun 29 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="bnt js-buy-bnt">Buy Tickets</button>
+                <button class="bnt js-buy-bnt s-full-width">Buy Tickets</button>
               </div>
             </div>
           </div>
@@ -120,7 +125,7 @@
         <p class="section-sub-heading">Fan? Drop a note!</p>
 
         <div class="contact-body row">
-          <div class="contact-info col col-half">
+          <div class="contact-info col col-half s-col-full">
             <p>
               <i class="fa-solid fa-location-dot"></i>
               Chicago, US
@@ -135,12 +140,12 @@
             </p>
           </div>
 
-          <form class="contact-form col col-half">
+          <form class="contact-form col col-half s-col-full s-mt16">
             <div class="row">
-              <div class="col col-half">
+              <div class="col col-half s-col-full">
                 <input type="text" class="form-control" required placeholder="Name">
               </div>
-              <div class="col col-half">
+              <div class="col col-half s-col-full s-mt8">
                 <input type="email" class="form-control" required placeholder="Email">
               </div>
             </div>
@@ -150,7 +155,7 @@
               </div>
             </div>
               
-            <input type="submit" value="Send" class="bnt pull-right mt16">
+            <input type="submit" value="Send" class="bnt pull-right s-full-width mt16">
           </form>
         </div>
       </div>
@@ -210,6 +215,38 @@
       </div>
     </div>
   </div>
+
+  <!-- Handle header bar -->
+  <script>
+    const menuBnt = document.querySelector('.mobile-menu-bnt')
+    const header = document.getElementById('header')
+    const headerHeight = header.clientHeight
+    const menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+    
+    // Handle menu button event
+    menuBnt.onclick = () => {
+      const isClose = header.clientHeight === headerHeight
+
+      if (isClose) {
+        header.style.height = 'auto';
+      } else {
+        header.style.height = null;
+      }
+    }
+
+    // Close menu when click to menu item
+    for (const menuItem of menuItems) {
+      menuItem.onclick = (e) => {
+        const isParentItem = menuItem.nextElementSibling && menuItem.nextElementSibling.classList.contains('subnav')
+
+        if (isParentItem) {
+          e.preventDefault()
+        } else {
+          header.style.height = null;
+        }
+      }
+    }
+  </script>
 
   <script>
     const modalElement = document.querySelector('.modal')
