@@ -1,5 +1,44 @@
+/* Tablet and Mobile */
+@media (max-width: 1023px) {
+  .bnt {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+
+  #nav .subnav a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  #content .contact-info {
+    line-height: 2;
+  }
+
+  #content .contact-form .form-control {
+    padding: 14px;
+  }
+
+  #footer .socials-list {
+    font-size: 28px;
+  }
+
+  #footer .socials-list a {
+    padding: 8px;
+  }
+
+  #footer .copyright {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+
+  #footer .copyright a {
+    padding: 8px;
+    display: inline-block;
+  }
+}
+
 /* Mobile */
-@media (max-width: 740px) {
+@media (max-width: 739px) {
   .s-col-full,
   .s-full-width {
     width: 100% !important;
@@ -51,5 +90,9 @@
   #content .member-img {
     margin-bottom: 15px;
     width: 60%;
+  }
+
+  #content .contact-info {
+    margin-bottom: 16px;
   }
 }

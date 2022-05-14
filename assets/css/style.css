@@ -177,7 +177,7 @@ html {
   position: relative;
   margin-top: 46px;
   padding-top: 50%;
-  background: url("/assets/img/slider/slider1.jpg") top center / cover no-repeat;
+  background: #fff url("../img/slider/slider1.jpg") top center / cover no-repeat;
 }
 
 #slider .text-content {
@@ -186,6 +186,7 @@ html {
   width: 100%;
   color: #fff;
   text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 #slider .text-heading {
@@ -342,11 +343,13 @@ html {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #content .contact-form input[type="submit"] {
   text-transform: uppercase;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 #content .contact-form .form-submit:hover {
@@ -357,6 +360,14 @@ html {
 #content .map-section img {
   width: 100%;
   display: block;
+}
+
+#contact .contact-info a {
+  color: rgba(22, 15, 104, 0.8);
+}
+
+#contact .contact-info a:hover {
+  color: rgba(22, 15, 104, 1);
 }
 
 #footer {
